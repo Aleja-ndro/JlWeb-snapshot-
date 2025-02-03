@@ -15,11 +15,15 @@ import jakarta.persistence.Id;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String description;
-    private String name;
-    private String brand;
-    private double price;
-    private double quantity;
+    private String codigo; // El código es único, por eso es @Id
+    private String rubro;
+    private String descripcion;
+    private String marca;
+    private double precioCompra;
+    private double precioVenta;
+    private int stock;
+    private int stockMinimo;
+    private int alicuotaIva;
+    private String codigoProv;
 
 }

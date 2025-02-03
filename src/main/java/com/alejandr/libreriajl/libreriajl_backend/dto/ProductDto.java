@@ -8,9 +8,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductDto {
-    private Long id;
-    private String name;
-    private String brand;
-    private double price;
+    private String codigo;
+    private String descripcion;
+    private String marca;
+    private double precioVenta;
         
 }
