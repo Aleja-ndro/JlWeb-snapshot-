@@ -8,19 +8,19 @@ import com.alejandr.libreriajl.libreriajl_backend.entity.Product;
 import jakarta.persistence.criteria.Predicate;
 
 public class ProductSpecifications {
-    public static Specification<Product>filterProduct(String name, String brand,String description){
+    public static Specification<Product>filterProduct(String description, String marca,String rubro){
         return( root,query,cb)->{
 
             Predicate predicate=cb.conjunction();
 
-            if(brand!=null && !brand.isEmpty()){
-                predicate=cb.and(predicate,cb.like(cb.lower(root.get("brand")),"%"+brand.toLowerCase()+"%"));
+            if(marca!=null && !marca.isEmpty()){
+                predicate=cb.and(predicate,cb.like(cb.lower(root.get("marca")),"%"+marca.toLowerCase()+"%"));
             }
-            if(name!=null &&!name.isEmpty()){
-                predicate=cb.and(predicate,cb.like(cb.lower(root.get("name")),"%"+ name.toLowerCase()+"%"));
+            if(description!=null &&!description.isEmpty()){
+                predicate=cb.and(predicate,cb.like(cb.lower(root.get("description")),"%"+ description.toLowerCase()+"%"));
             }
-            if(description!=null && !description.isEmpty()){
-                predicate=cb.and(predicate,cb.like(cb.lower(root.get("description")),"%"+description.toLowerCase()+"%"));
+            if(rubro!=null && !rubro.isEmpty()){
+                predicate=cb.and(predicate,cb.like(cb.lower(root.get("rubro")),"%"+rubro.toLowerCase()+"%"));
                 
             }
             return predicate;
